@@ -18,10 +18,10 @@ class Category(Enum):
 
 class FoodItem:
     def __init__(self, name, price, category):
-        self.name = name
-        self.price = price
-        self.category = category
-        self.popularity_rating = 0.0
+        self._name = name
+        self._price = price
+        self._category = category
+        self._popularity_rating = 0.0
 
     def get_name(self):
         pass
@@ -76,6 +76,9 @@ class Customer:
         self.id = id
         self.name = name
         self.purchase_history = []
+
+    def get_id(self):
+        pass
 
     def get_name(self):
         pass

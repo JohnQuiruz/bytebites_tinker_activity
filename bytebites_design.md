@@ -12,6 +12,7 @@ classDiagram
         -String name
         -Transaction[] purchaseHistory
         +Customer(id String, name String)
+        +getId() String
         +getName() String
         +setName(name String) void
         +getPurchaseHistory() Transaction[]
@@ -50,6 +51,6 @@ classDiagram
     }
 
     Customer "1" --> "0..*" Transaction : places
-    Transaction "1" --> "1..*" FoodItem : contains
+    Transaction "1" --> "0..*" FoodItem : contains
     FoodItemCollection "1" o-- "0..*" FoodItem : stores
     FoodItem ..> Category : uses

@@ -1,8 +1,9 @@
 classDiagram
     class Customer {
+        -String id
         -String name
         -Transaction[] purchaseHistory
-        +Customer(name String)
+        +Customer(id String, name String)
         +getName() String
         +setName(name String) void
         +getPurchaseHistory() Transaction[]
@@ -31,8 +32,10 @@ classDiagram
     }
 
     class Transaction {
+        -String customerId
         -FoodItem[] items
-        +Transaction()
+        +Transaction(customerId String)
+        +getCustomerId() String
         +addItem(item FoodItem) void
         +getItems() FoodItem[]
         +computeTotal() Float

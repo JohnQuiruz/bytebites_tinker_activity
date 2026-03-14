@@ -1,4 +1,12 @@
 classDiagram
+    class Category {
+        <<enumeration>>
+        BURGERS
+        DRINKS
+        DESSERTS
+        SIDES
+    }
+
     class Customer {
         -String id
         -String name
@@ -13,12 +21,12 @@ classDiagram
     class FoodItem {
         -String name
         -Float price
-        -String category
+        -Category category
         -Float popularityRating
-        +FoodItem(name String, price Float, category String)
+        +FoodItem(name String, price Float, category Category)
         +getName() String
         +getPrice() Float
-        +getCategory() String
+        +getCategory() Category
         +getPopularityRating() Float
         +setPopularityRating(rating Float) void
     }
@@ -28,7 +36,7 @@ classDiagram
         +FoodItemCollection()
         +addItem(item FoodItem) void
         +getItems() FoodItem[]
-        +filterByCategory(category String) FoodItem[]
+        +filterByCategory(category Category) FoodItem[]
     }
 
     class Transaction {
@@ -44,3 +52,4 @@ classDiagram
     Customer "1" --> "0..*" Transaction : places
     Transaction "1" --> "1..*" FoodItem : contains
     FoodItemCollection "1" o-- "0..*" FoodItem : stores
+    FoodItem ..> Category : uses

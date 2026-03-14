@@ -24,19 +24,19 @@ class FoodItem:
         self._popularity_rating = 0.0
 
     def get_name(self):
-        pass
+        return self._name
 
     def get_price(self):
-        pass
+        return self._price
 
     def get_category(self):
-        pass
+        return self._category
 
     def get_popularity_rating(self):
-        pass
+        return self._popularity_rating
 
     def set_popularity_rating(self, rating):
-        pass
+        self._popularity_rating = rating
 
 
 class FoodItemCollection:
